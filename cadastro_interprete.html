@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>LIBRAS • Cadastrar Intérprete</title>
+  <link rel="stylesheet" href="CSS/estilo.css">
+</head>
+<body>
+  <header>Cadastro de Intérprete</header>
+  <div class="container">
+    <form onsubmit="event.preventDefault(); window.location.href='interprete.html'">
+      <h2>Dados do Intérprete</h2>
+
+      <!-- Nome -->
+      <input type="text" name="nome" placeholder="Nome completo" required>
+
+      <!-- E-mail -->
+      <input type="email" name="email" placeholder="E-mail" required>
+
+      <!-- Telefone -->
+      <input type="tel" name="telefone" placeholder="Telefone (com DDD)" required>
+
+      <!-- Tipo de Ensino -->
+      <label for="tipo-ensino">Tipo de Ensino</label>
+      <select id="tipo-ensino" name="tipo-ensino" required>
+        <option value="">Selecione</option>
+        <option value="online">Online (Ao Vivo)</option>
+        <option value="gravadas">Vídeos Gravados</option>
+      </select>
+
+      <!-- Modalidade de Aula -->
+      <label for="modalidade">Modalidade de Aula</label>
+      <select id="modalidade" name="modalidade" required>
+        <option value="">Selecione</option>
+        <option value="individual">Individual</option>
+        <option value="grupo">Em Grupo</option>
+      </select>
+
+      <!-- Horários Disponíveis -->
+      <fieldset>
+        <legend>Horários de Aula Disponíveis</legend>
+        <label><input type="checkbox" name="horario" value="manha"> Manhã</label>
+        <label><input type="checkbox" name="horario" value="tarde"> Tarde</label>
+        <label><input type="checkbox" name="horario" value="noite"> Noite</label>
+      </fieldset>
+
+      <!-- Dias de Trabalho -->
+      <fieldset>
+        <legend>Dias de Trabalho</legend>
+        <label><input type="checkbox" name="dias-trabalho" value="segunda"> Segunda-feira</label>
+        <label><input type="checkbox" name="dias-trabalho" value="terca"> Terça-feira</label>
+        <label><input type="checkbox" name="dias-trabalho" value="quarta"> Quarta-feira</label>
+        <label><input type="checkbox" name="dias-trabalho" value="quinta"> Quinta-feira</label>
+        <label><input type="checkbox" name="dias-trabalho" value="sexta"> Sexta-feira</label>
+        <label><input type="checkbox" name="dias-trabalho" value="sabado"> Sábado</label>
+        <label><input type="checkbox" name="dias-trabalho" value="domingo"> Domingo</label>
+      </fieldset>
+
+      <button type="submit">Cadastrar Intérprete</button>
+    </form>
+  </div>
+  <footer>LIBRAS • Projeto de TCC</footer>
+</body>
+</html>

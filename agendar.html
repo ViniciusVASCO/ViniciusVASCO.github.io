@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIBRAS • Agendar Aula</title>
+  <link rel="stylesheet" href="CSS/estilo.css">
+</head>
+<body>
+  <header>Agendar Aula</header>
+
+  <div class="container">
+    <form id="agendamento-form">
+      <!-- Informações do intérprete selecionado -->
+      <h2>Intérprete:</h2>
+      <div id="info-intprete">
+        <p><strong>Nome:</strong> <span id="nome-int">--</span></p>
+        <p><strong>Nível que ensina:</strong> <span id="nivel-int">--</span></p>
+        <p><strong>Períodos disponíveis:</strong> <span id="periodos-int">--</span></p>
+        <p><strong>Tipo de Ensino:</strong> <span id="ensino-int">--</span></p>
+        <p><strong>Dias disponíveis:</strong> <span id="datas-int">--</span></p>
+      </div>
+
+      <!-- Seletor de nível -->
+      <h2>Nível da Aula:</h2>
+      <select required name="nivel">
+        <option value="">Selecione o nível</option>
+        <option value="basico">Básico</option>
+        <option value="intermediario">Intermediário</option>
+        <option value="avancado">Avançado</option>
+      </select>
+
+      <!-- Período -->
+      <h2>Período:</h2>
+      <select required name="periodo">
+        <option value="">Selecione o período</option>
+        <option value="manha">Manhã</option>
+        <option value="tarde">Tarde</option>
+        <option value="noite">Noite</option>
+        <option value="finais-semana">Finais de Semana</option>
+      </select>
+
+      <!-- Data da Aula -->
+      <h2>Data da Aula:</h2>
+      <input type="date" id="data" name="data" required>
+
+      <!-- Tipo de ensino -->
+      <h2>Formato da Aula:</h2>
+      <div class="options-agenda">
+        <div class="opt" id="opt-online">Aula Online (Ao Vivo)</div>
+        <div class="opt" id="opt-videos">Vídeos Passo a Passo</div>
+      </div>
+      <input type="hidden" name="formato" id="formato" required>
+
+      <button type="submit">Confirmar Agendamento</button>
+    </form>
+  </div>
+
+  <footer>LIBRAS • Projeto de TCC</footer>
+
+  <!-- Importação do Script -->
+  <script src="script.js"></script>
+</body>
+</html>
++
