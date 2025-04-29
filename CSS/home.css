@@ -1,83 +1,393 @@
-/* Estilos específicos para a página inicial */
+/* ESTILOS GERAIS */
+:root {
+  --verde-principal: #37663e;
+  --verde-escuro: #37663e;
+  --branco: #ffffff;
+  --cinza-claro: #f5f5f5;
+  --cinza-texto: #555555;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--cinza-texto);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #effff1;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--verde-escuro);
+}
+
+.hand-icon {
+  font-size: 1.8rem;
+  margin-right: 10px;
+}
+
+/* BOTÕES NA NAVBAR */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espaço entre os botões */
+}
+
+.btn-login,
+.btn-cadastro {
+  background: var(--verde-principal);
+  color: #ffffff !important;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-block; /* Garante alinhamento correto */
+}
+
+/* Efeito hover para ambos */
+.btn-login:hover,
+.btn-cadastro:hover {
+  background: var(--verde-escuro);
+  transform: translateY(-2px);
+}
+
+/* Opcional: Destaque diferente para cadastro */
+.btn-cadastro {
+  background: #ffffff;
+  color: var(--verde-principal) !important;
+  border: 2px solid var(--verde-principal);
+}
+
+.btn-cadastro:hover {
+  background: var(--verde-principal);
+  color: #ffffff !important;
+}
+
+.menu-mobile {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 4rem 5%;
+  background: linear-gradient(135deg, #7ca481, var(--branco));
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: var(--verde-escuro);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.search-box {
+  display: flex;
+  max-width: 600px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+}
+
+.search-box button {
+  background: var(--verde-principal);
+  color: var(--branco);
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-box button:hover {
+  background: var(--verde-escuro);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* COMO FUNCIONA */
+.como-funciona {
+  padding: 4rem 5%;
+  text-align: center;
+  background: var(--branco);
+}
+
+.como-funciona h2 {
+  font-size: 2rem;
+  color: var(--verde-escuro);
+  margin-bottom: 3rem;
+}
+
+.passos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.passo {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 2rem;
+  background: var(--cinza-claro);
+  border-radius: 10px;
+  position: relative;
+}
+
+.numero {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--verde-principal);
+  color: var(--branco);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.passo i {
+  font-size: 2.5rem;
+  color: var(--verde-principal);
+  margin-bottom: 1rem;
+}
+
+.passo h3 {
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+
+/* DESTAQUES */
+.destaques {
+  padding: 4rem 5%;
+  background: var(--cinza-claro);
+}
+
+.destaques h2 {
+  font-size: 2rem;
+  color: var(--verde-escuro);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.professores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.professor-card {
+  background: var(--branco);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.professor-card:hover {
+  transform: translateY(-10px);
+}
+
+.professor-header {
+  position: relative;
+}
+
+.professor-header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.avaliacao {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.7);
+  color: var(--branco);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.professor-info {
+  padding: 1.5rem;
+}
+
+.professor-info h3 {
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.professor-info p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.professor-info i {
+  color: var(--verde-principal);
+  margin-right: 0.5rem;
+}
+
+.preco {
+  font-weight: bold;
+  color: var(--verde-escuro);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.btn-ver-mais {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  background: var(--verde-principal);
+  color: var(--branco);
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-ver-mais:hover {
+  background: var(--verde-escuro);
+}
+
+/* FOOTER */
+footer {
+  background: #effff1;
+  color:var(--verde-escuro) ;
+  padding: 3rem 5% 1rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 2px;
+  background: darkgreen;
+}
+
+.footer-section a {
+  display: block;
+  color: var(--verde-escuro);
+  margin-bottom: 0.8rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #b2dfdb;
+}
+
+.footer-section i {
+  margin-right: 0.8rem;
+  width: 20px;
+  text-align: center;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
   }
   
-  .half-screen {
-    width: 50%;
-    height: 100%;
-    display: flex;
+  .menu-mobile {
+    display: block;
+  }
+  
+  .hero {
     flex-direction: column;
-    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .search-box {
+    margin: 0 auto;
+  }
+  
+  .passos {
+    flex-direction: column;
     align-items: center;
   }
   
-  .app-presentation {
-    background-color: #00695c;
-    color: white;
-  }
-  
-  .app-name {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
-  .app-slogan {
-    font-size: 1.5rem;
-    text-align: center;
-    max-width: 80%;
-  }
-  
-  .login-options {
-    background-color: #f5f5f5;
-  }
-  
-  .login-title {
-    font-size: 2rem;
-    color: #00695c;
+  .passo {
+    width: 100%;
     margin-bottom: 2rem;
   }
-  
-  .login-btn {
-    width: 200px;
-    padding: 15px;
-    margin: 10px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .aluno-btn {
-    background-color: #00897b;
-    color: white;
-  }
-  
-  .professor-btn {
-    background-color: white;
-    color: #00897b;
-    border: 2px solid #00897b;
-  }
-  
-  .login-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-  
-  @media (max-width: 768px) {
-    body {
-      flex-direction: column;
-    }
-    
-    .half-screen {
-      width: 100%;
-      height: 50%;
-    }
-  }
+}

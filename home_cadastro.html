@@ -3,27 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LIBRAS • Plataforma de Ensino</title>
-  <link rel="stylesheet" href="CSS/home.css">
+  <title>LIBRAS Connect | Escolha de Cadastro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/home_cadastro.css">
 </head>
 <body>
-  <!-- Metade esquerda - Apresentação do App -->
-  <div class="half-screen app-presentation">
-    <div class="app-content">
-      <h1 class="app-name">LIBRAS</h1>
-      <p class="app-slogan">Plataforma completa para aprendizado e ensino de Língua Brasileira de Sinais</p>
+  <!-- Cabeçalho -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <span class="hand-icon">👋</span>
+        <span>LIBRAS Connect</span>
     </div>
-  </div>
+  </header>
 
-  <!-- Metade direita - Opções de Login -->
-  <div class="half-screen login-options">
-    <h2 class="login-title">Area de cadastro!</h2>
-    <button class="login-btn aluno-btn" onclick="location.href='cadastro_usuario.html'">
-      Quero ser aluno
-    </button>
-    <button class="login-btn professor-btn" onclick="location.href='cadastro_interprete.html'">
-      Quero ser professor
-    </button>
-  </div>
+  <!-- Conteúdo Principal -->
+  <main class="main-content">
+    <div class="container">
+      <div class="title-container">
+        <h1><i class="fas fa-user-plus"></i> Criar Conta</h1>
+        <p>Selecione seu tipo de cadastro</p>
+      </div>
+
+      <div class="options-container">
+        <!-- Opção Aluno -->
+        <div class="option-card" onclick="location.href='cadastro_usuario.html'">
+          <div class="option-icon">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <h2>Sou Aluno</h2>
+          <p>Quero aprender LIBRAS com professores qualificados</p>
+          <div class="option-footer">
+            Cadastre-se <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <!-- Opção Professor -->
+        <div class="option-card" onclick="location.href='cadastro_interprete.html'">
+          <div class="option-icon">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h2>Sou Professor</h2>
+          <p>Quero oferecer aulas de LIBRAS na plataforma</p>
+          <div class="option-footer">
+            Cadastre-se <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>LIBRAS Connect &copy; 2023 - Todos os direitos reservados</p>
+    </div>
+  </footer>
 </body>
 </html>

@@ -3,30 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LIBRAS • Plataforma de Ensino</title>
+  <title>LIBRAS Connect | Plataforma de Ensino</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="CSS/home.css">
 </head>
 <body>
-  <!-- Metade esquerda - Apresentação do App -->
-  <div class="half-screen app-presentation">
-    <div class="app-content">
-      <h1 class="app-name">LIBRAS</h1>
-      <p class="app-slogan">Plataforma completa para aprendizado e ensino de Língua Brasileira de Sinais</p>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <span class="hand-icon">👋</span>
+      <span>LIBRAS Connect</span>
     </div>
-  </div>
-  
-  <!-- Metade direita - Opções de Login -->
-  <div class="half-screen login-options">
-    <h2 class="login-title">Acessar Plataforma</h2>
-    <button class="login-btn aluno-btn" onclick="location.href='login_aluno.html'">
-      Sou Aluno
-    </button>
-    <button class="login-btn professor-btn" onclick="location.href='login_professor.html'">
-      Sou Professor
-    </button>
-    
-    <!-- Link para cadastro -->
-    <a href="home_cadastro.html" class="register-link">Não tenho cadastro</a>
-  </div>
+    <div class="nav-links">
+      <a href="login.html" class="btn-login">Entrar</a>
+      <a href="home_cadastro.html" class="btn-login">Cadastre-se</a>
+    </div>
+    <div class="menu-mobile" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Aprenda LIBRAS com os melhores professores</h1>
+      <p>Conectamos você a intérpretes qualificados para aulas presenciais ou online</p>
+    </div>
+    <div class="hero-image">
+      <img src="imagens/hero-libras.png" alt="Pessoas comunicando-se em LIBRAS">
+    </div>
+  </section>
+
+  <!-- Como Funciona -->
+  <section class="como-funciona" id="como-funciona">
+    <h2>Como Funciona</h2>
+    <div class="passos">
+      <div class="passo">
+        <div class="numero">1</div>
+        <i class="fas fa-user-plus"></i>
+        <h3>Crie sua conta</h3>
+        <p>Registre-se como aluno ou professor</p>
+      </div>
+      <div class="passo">
+        <div class="numero">2</div>
+        <i class="fas fa-search"></i>
+        <h3>Encontre seu professor</h3>
+        <p>Filtre por localidade, preço e avaliações</p>
+      </div>
+      <div class="passo">
+        <div class="numero">3</div>
+        <i class="fas fa-calendar-check"></i>
+        <h3>Agende suas aulas</h3>
+        <p>Escolha o horário que melhor se adapta</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>LIBRAS Connect</h3>
+        <p>Plataforma de conexão entre alunos e professores de LIBRAS</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <a href="index.html">Home</a>
+        <a href="interpretes.html">Professores</a>
+        <a href="home_cadastro.html">Cadastre-se</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p><i class="fas fa-envelope"></i> contato@librasconnect.com</p>
+        <p><i class="fas fa-phone"></i> (41) 98765-4321</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2023 LIBRAS Connect. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

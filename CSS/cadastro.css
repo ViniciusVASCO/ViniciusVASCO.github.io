@@ -1,0 +1,216 @@
+body{
+font-family: 'Poppins', sans-serif;
+background-color: #effff1;
+min-height: 100vh;
+}
+
+.cadastro-header h1 {
+  color: #37663e;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.cadastro-header p {
+  color: #37663e;
+  font-size: 1rem;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.cadastro-header .fa-chalkboard-teacher {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  align-items: center;
+}
+.cadastro-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  padding: 0 10px;
+  font-weight: 600;
+  color: #37663e;
+  font-size: 1.1rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.radio-group, .checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group label, .checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.radio-group label:hover, .checkbox-group label:hover {
+  background: #e0f2f1;
+}
+
+.submit-btn {
+  background: #37663e;
+  color: white;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background:#b8ffc3;
+}
+
+small {
+  font-size: 0.85rem;
+  color: #777;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.fas {
+  margin-right: 0.5rem;
+}
+
+/* CADASTRO ALUNO */
+.green-bg {
+  background-color: #effff1;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.white-form {
+  background-color: white;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.cadastro-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cadastro-header h1 {
+  color: #37663e;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.cadastro-header p {
+  color: #555;
+  font-size: 1rem;
+}
+
+fieldset {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem
+}
+
+input[type="date"],
+input[type="password"],
+input[type="email"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  height: 48px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .cadastro-container {
+    padding: 1rem;
+  }
+  
+  fieldset {
+    padding: 1rem;
+  }
+  
+  .radio-group, .checkbox-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
