@@ -3,63 +3,330 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LIBRAS • Agendar Aula</title>
-  <link rel="stylesheet" href="CSS/estilo.css">
+  <title>Agendar Aula | LIBRAS Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="CSS/home.css">
 </head>
 <body>
-  <header>Agendar Aula</header>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <span class="hand-icon">👋</span>
+      <span>LIBRAS Connect</span>
+    </div>
+    <div class="menu-mobile" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
 
-  <div class="container">
-    <form id="agendamento-form">
-      <!-- Informações do intérprete selecionado -->
-      <h2>Intérprete:</h2>
-      <div id="info-intprete">
-        <p><strong>Nome:</strong> <span id="nome-int">--</span></p>
-        <p><strong>Nível que ensina:</strong> <span id="nivel-int">--</span></p>
-        <p><strong>Períodos disponíveis:</strong> <span id="periodos-int">--</span></p>
-        <p><strong>Tipo de Ensino:</strong> <span id="ensino-int">--</span></p>
-        <p><strong>Dias disponíveis:</strong> <span id="datas-int">--</span></p>
+  <!-- Conteúdo Principal -->
+  <main class="agendamento-container">
+    <div class="container">
+      <!-- Cabeçalho -->
+      <div class="agendamento-header">
+        <a href="perfil-professor.html" class="btn-voltar">
+          <i class="fas fa-arrow-left"></i> Voltar ao perfil
+        </a>
+        <h1><i class="fas fa-calendar-check"></i> Agendar Aula com <span class="nome-professor">João Silva</span></h1>
       </div>
 
-      <!-- Seletor de nível -->
-      <h2>Nível da Aula:</h2>
-      <select required name="nivel">
-        <option value="">Selecione o nível</option>
-        <option value="basico">Básico</option>
-        <option value="intermediario">Intermediário</option>
-        <option value="avancado">Avançado</option>
-      </select>
+      <div class="agendamento-content">
+        <!-- Seção Professor -->
+        <div class="professor-info-card">
+          <div class="professor-mini-card">
+            <img src="imagens/professor-joao.jpg" alt="Professor João Silva">
+            <div class="professor-mini-info">
+              <h3>João Silva</h3>
+              <div class="avaliacao-mini">
+                ⭐ 4.9 (120 avaliações)
+              </div>
+            </div>
+          </div>
+          
+          <div class="info-aula">
+            <h4><i class="fas fa-info-circle"></i> Sobre as aulas:</h4>
+            <ul>
+              <li><i class="fas fa-video"></i> Aulas online via Zoom</li>
+              <li><i class="fas fa-clock"></i> Duração: 1 hora</li>
+              <li><i class="fas fa-certificate"></i> Material inclusivo</li>
+            </ul>
+          </div>
+        </div>
 
-      <!-- Período -->
-      <h2>Período:</h2>
-      <select required name="periodo">
-        <option value="">Selecione o período</option>
-        <option value="manha">Manhã</option>
-        <option value="tarde">Tarde</option>
-        <option value="noite">Noite</option>
-        <option value="finais-semana">Finais de Semana</option>
-      </select>
-
-      <!-- Data da Aula -->
-      <h2>Data da Aula:</h2>
-      <input type="date" id="data" name="data" required>
-
-      <!-- Tipo de ensino -->
-      <h2>Formato da Aula:</h2>
-      <div class="options-agenda">
-        <div class="opt" id="opt-online">Aula Online (Ao Vivo)</div>
-        <div class="opt" id="opt-videos">Vídeos Passo a Passo</div>
+        <!-- Formulário de Agendamento -->
+        <div class="form-agendamento">
+          <h2><i class="fas fa-calendar-alt"></i> Escolha a Data e Horário</h2>
+          
+          <!-- Etapa 1: Seleção de Data -->
+          <div class="etapa etapa-ativa" id="etapa1">
+            <div class="calendario-container">
+              <div class="mes-navegacao">
+                <button class="btn-mes" id="btnMesAnterior"><i class="fas fa-chevron-left"></i></button>
+                <h3 id="mesAtual">Junho 2023</h3>
+                <button class="btn-mes" id="btnProximoMes"><i class="fas fa-chevron-right"></i></button>
+              </div>
+              
+              <div class="dias-semana">
+                <div>Dom</div>
+                <div>Seg</div>
+                <div>Ter</div>
+                <div>Qua</div>
+                <div>Qui</div>
+                <div>Sex</div>
+                <div>Sáb</div>
+              </div>
+              
+              <div class="dias-mes" id="diasMes">
+                <!-- Dias serão preenchidos via JavaScript -->
+              </div>
+            </div>
+            
+            <div class="horarios-disponiveis">
+              <h4>Horários Disponíveis:</h4>
+              <div class="lista-horarios" id="listaHorarios">
+                <button type="button" class="btn-horario">08:00</button>
+                <button type="button" class="btn-horario">09:00</button>
+                <button type="button" class="btn-horario">10:00</button>
+                <button type="button" class="btn-horario">14:00</button>
+                <button type="button" class="btn-horario">15:00</button>
+                <button type="button" class="btn-horario">16:00</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Etapa 2: Detalhes da Aula -->
+          <div class="etapa" id="etapa2">
+            <div class="form-group">
+              <label for="tipoAula">Tipo de Aula*</label>
+              
+            </div>
+            
+            <div class="form-group">
+              <label for="objetivo">Objetivo da Aula*</label>
+              <select id="objetivo" required>
+                <option value="">Selecione</option>
+                <option value="basico">Aprendizado Básico</option>
+                <option value="conversacao">Prática de Conversação</option>
+                <option value="especifico">Assunto Específico</option>
+                <option value="reforco">Reforço</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="observacoes">Observações</label>
+              <textarea id="observacoes" placeholder="Informe se há algum conteúdo específico que deseja abordar"></textarea>
+            </div>
+          </div>
+          
+          <!-- Navegação entre etapas -->
+          <div class="navegacao-etapas">
+            <button type="button" class="btn-voltar-etapa" id="btnVoltar" disabled>
+              <i class="fas fa-arrow-left"></i> Voltar
+            </button>
+            <button type="button" class="btn-avancar" id="btnAvancar">
+              Continuar <i class="fas fa-arrow-right"></i>
+            </button>
+            <button type="submit" class="btn-confirmar" id="btnConfirmar">
+              <i class="fas fa-check"></i> Confirmar Agendamento
+            </button>
+          </div>
+        </div>
       </div>
-      <input type="hidden" name="formato" id="formato" required>
+    </div>
+  </main>
 
-      <button type="submit">Confirmar Agendamento</button>
-    </form>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>LIBRAS Connect</h3>
+        <p>Plataforma de conexão entre alunos e professores de LIBRAS</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <a href="index.html">Home</a>
+        <a href="professores.html">Professores</a>
+        <a href="home_cadastro.html">Cadastre-se</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p><i class="fas fa-envelope"></i> contato@librasconnect.com</p>
+        <p><i class="fas fa-phone"></i> (41) 98765-4321</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2023 LIBRAS Connect. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  
+  <div class="modal" id="modalConfirmacao">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h2>Agendamento Confirmado!</h2>
+      <div class="resumo-agendamento">
+        <p><strong>Professor:</strong> <span id="modalProfessor">João Silva</span></p>
+        <p><strong>Data:</strong> <span id="modalData">15/06/2023</span> às <span id="modalHora">14:00</span></p>
+        <p><strong>Tipo:</strong> <span id="modalTipo">Aula Individual</span></p>
+        <p id="modalObservacao" style="display:none;"><strong>Sala Virtual:</strong> <span id="modalSala">LIBRAS-Avancado-015</span></p>
+      </div>
+      <div class="modal-botoes">
+        <!-- Botão sempre visível -->
+        <a href="perfil-professor.html" class="btn-modal btn-verde">
+          <i class="fas fa-arrow-left"></i> Voltar ao Perfil
+        </a>
+        
+        <!-- Botão condicional (só aparece para aulas individuais) -->
+        <button class="btn-modal btn-chat" id="btnAbrirChat" style="display:none;">
+          <i class="fas fa-comments"></i> Abrir Chat de Aula
+        </button>
+        
+        <!-- Botão condicional (só aparece para aulas em grupo) -->
+        <button class="btn-modal btn-sala" id="btnAcessarSala" style="display:none;">
+          <i class="fas fa-door-open"></i> Acessar Sala Virtual
+        </button>
+      </div>
+    </div>
   </div>
-
-  <footer>LIBRAS • Projeto de TCC</footer>
-
-  <!-- Importação do Script -->
-  <script src="script.js"></script>
+  <script>
+    // Controle das etapas do formulário
+    document.addEventListener('DOMContentLoaded', function() {
+      const etapa1 = document.getElementById('etapa1');
+      const etapa2 = document.getElementById('etapa2');
+      const btnAvancar = document.getElementById('btnAvancar');
+      const btnVoltar = document.getElementById('btnVoltar');
+      const btnConfirmar = document.getElementById('btnConfirmar');
+      
+      // Avançar para etapa 2
+      btnAvancar.addEventListener('click', function() {
+        etapa1.classList.remove('etapa-ativa');
+        etapa2.classList.add('etapa-ativa');
+        btnAvancar.style.display = 'none';
+        btnVoltar.disabled = false;
+        btnConfirmar.style.display = 'block';
+      });
+      
+      // Voltar para etapa 1
+      btnVoltar.addEventListener('click', function() {
+        etapa2.classList.remove('etapa-ativa');
+        etapa1.classList.add('etapa-ativa');
+        btnAvancar.style.display = 'block';
+        btnVoltar.disabled = true;
+        btnConfirmar.style.display = 'none';
+      });
+      
+      // Simular calendário (em aplicação real, integrar com API)
+      const diasMes = document.getElementById('diasMes');
+      const mesAtual = document.getElementById('mesAtual');
+      const hoje = new Date();
+      let mes = hoje.getMonth();
+      let ano = hoje.getFullYear();
+      
+      function renderizarCalendario() {
+        const primeiroDia = new Date(ano, mes, 1).getDay();
+        const ultimoDia = new Date(ano, mes + 1, 0).getDate();
+        
+        mesAtual.textContent = new Date(ano, mes).toLocaleDateString('pt-BR', { 
+          month: 'long', 
+          year: 'numeric' 
+        }).replace(/^\w/, c => c.toUpperCase());
+        
+        diasMes.innerHTML = '';
+        
+        // Dias vazios no início
+        for (let i = 0; i < primeiroDia; i++) {
+          diasMes.innerHTML += '<div class="dia-vazio"></div>';
+        }
+        
+        // Dias do mês
+        for (let dia = 1; dia <= ultimoDia; dia++) {
+          const diaElement = document.createElement('div');
+          diaElement.textContent = dia;
+          diaElement.className = 'dia-calendario';
+          
+          // Marcar dia atual
+          if (dia === hoje.getDate() && mes === hoje.getMonth() && ano === hoje.getFullYear()) {
+            diaElement.classList.add('dia-atual');
+          }
+          
+          // Simular disponibilidade (ímpar = disponível)
+          if (dia % 2 !== 0) {
+            diaElement.classList.add('dia-disponivel');
+            diaElement.addEventListener('click', function() {
+              document.querySelectorAll('.dia-calendario').forEach(d => 
+                d.classList.remove('dia-selecionado'));
+              this.classList.add('dia-selecionado');
+              // Simular horários disponíveis
+              document.getElementById('listaHorarios').innerHTML = 
+                `<button type="button" class="btn-horario">08:00</button>
+                 <button type="button" class="btn-horario">10:00</button>
+                 <button type="button" class="btn-horario">14:00</button>
+                 <button type="button" class="btn-horario">16:00</button>`;
+            });
+          } else {
+            diaElement.classList.add('dia-indisponivel');
+          }
+          
+          diasMes.appendChild(diaElement);
+        }
+      }
+      
+      // Navegação entre meses
+      document.getElementById('btnMesAnterior').addEventListener('click', function() {
+        mes--;
+        if (mes < 0) {
+          mes = 11;
+          ano--;
+        }
+        renderizarCalendario();
+      });
+      
+      document.getElementById('btnProximoMes').addEventListener('click', function() {
+        mes++;
+        if (mes > 11) {
+          mes = 0;
+          ano++;
+        }
+        renderizarCalendario();
+      });
+      
+      // Selecionar horário
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('btn-horario')) {
+          document.querySelectorAll('.btn-horario').forEach(btn => 
+            btn.classList.remove('horario-selecionado'));
+          e.target.classList.add('horario-selecionado');
+        }
+      });
+      
+      // Confirmar agendamento
+      btnConfirmar.addEventListener('click', function() {
+        const modal = document.getElementById('modalConfirmacao');
+        modal.style.display = 'block';
+        
+        // Pegar dados selecionados (simulação)
+        const diaSelecionado = document.querySelector('.dia-selecionado')?.textContent || '15';
+        const horarioSelecionado = document.querySelector('.horario-selecionado')?.textContent || '14:00';
+        const tipoAula = document.getElementById('tipoAula').value || 'individual';
+        
+        document.getElementById('modalData').textContent = `${diaSelecionado.padStart(2, '0')}/${(mes+1).toString().padStart(2, '0')}/${ano}`;
+        document.getElementById('modalHora').textContent = horarioSelecionado;
+        document.getElementById('modalTipo').textContent = 
+          tipoAula === 'individual' ? 'Aula Individual' : 
+          tipoAula === 'pacote' ? 'Pacote 4 aulas' : 'Aula em Grupo';
+      });
+      
+      // Fechar modal
+      document.querySelector('.close-modal').addEventListener('click', function() {
+        document.getElementById('modalConfirmacao').style.display = 'none';
+      });
+      
+      // Inicializar calendário
+      renderizarCalendario();
+    });
+  </script>
 </body>
 </html>
-+

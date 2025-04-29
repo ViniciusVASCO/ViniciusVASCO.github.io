@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professores de LIBRAS | LIBRAS Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="CSS/professores.css">
+</head>
+<body>
+  <!-- Navbar (igual à home) -->
+  <nav class="navbar">
+    <div class="logo">
+      <span class="hand-icon">👋</span>
+      <span>LIBRAS Connect</span>
+    </div>
+    <div class="menu-mobile" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="professores-container">
+    <!-- Seção de Destaques -->
+    <section class="destaques">
+      <div class="container">
+        <h2>Professores Destaque <i class="fas fa-star" style="color: gold;"></i></h2>
+        <div class="professores-grid">
+          <!-- Professor 1 -->
+          <div class="professor-card destaque">
+            <div class="professor-header">
+              <img src="imagens/professor1.jpg" alt="Professor João">
+              <span class="avaliacao">⭐ 4.9 (120)</span>
+            </div>
+            <div class="professor-info">
+              <h3>João Silva</h3>
+              <p><i class="fas fa-graduation-cap"></i> Especialista em LIBRAS Avançado</p>
+              <a href="professor.html" class="btn-ver-mais">Ver Perfil</a>
+            </div>
+          </div>
+
+          <!-- Professor 2 -->
+          <div class="professor-card destaque">
+            <div class="professor-header">
+              <img src="imagens/professor2.jpg" alt="Professora Maria">
+              <span class="avaliacao">⭐ 4.8 (95)</span>
+            </div>
+            <div class="professor-info">
+              <h3>Maria Oliveira</h3>
+              <p><i class="fas fa-graduation-cap"></i> LIBRAS para Iniciantes</p>
+              <a href="professor.html" class="btn-ver-mais">Ver Perfil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Todos os Professores -->
+    <section class="todos-professores">
+      <div class="container">
+        <h2>Todos os Professores</h2>
+        <div class="professores-grid">
+          <!-- Professor 3 -->
+          <div class="professor-card">
+            <div class="professor-header">
+              <img src="imagens/professor3.jpg" alt="Professor Carlos">
+              <span class="avaliacao">⭐ 4.7 (80)</span>
+            </div>
+            <div class="professor-info">
+              <h3>Carlos Mendes</h3>
+              <p><i class="fas fa-graduation-cap"></i> LIBRAS Infantil</p>
+              <a href="professor.html" class="btn-ver-mais">Ver Perfil</a>
+            </div>
+          </div>
+
+          <!-- Professor 4 -->
+          <div class="professor-card">
+            <div class="professor-header">
+              <img src="imagens/professor4.jpg" alt="Professora Ana">
+              <span class="avaliacao">⭐ 4.6 (65)</span>
+            </div>
+            <div class="professor-info">
+              <h3>Ana Paula</h3>
+              <p><i class="fas fa-graduation-cap"></i> LIBRAS para Negócios</p>
+              <a href="professor.html" class="btn-ver-mais">Ver Perfil</a>
+            </div>
+          </div>
+
+          <!-- Adicione mais professores conforme necessário -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (igual à home) -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>LIBRAS Connect</h3>
+        <p>Plataforma de conexão entre alunos e professores de LIBRAS</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <a href="index.html">Home</a>
+        <a href="professores.html">Professores</a>
+        <a href="home_cadastro.html">Cadastre-se</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p><i class="fas fa-envelope"></i> contato@librasconnect.com</p>
+        <p><i class="fas fa-phone"></i> (41) 98765-4321</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2023 LIBRAS Connect. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

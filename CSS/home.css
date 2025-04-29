@@ -1,0 +1,838 @@
+/* ESTILOS GERAIS */
+:root {
+  --verde-principal: #37663e;
+  --verde-escuro: #37663e;
+  --branco: #ffffff;
+  --cinza-claro: #f5f5f5;
+  --cinza-texto: #555555;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--cinza-texto);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #effff1;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--verde-escuro);
+}
+
+.hand-icon {
+  font-size: 1.8rem;
+  margin-right: 10px;
+}
+
+/* BOTÕES NA NAVBAR */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espaço entre os botões */
+}
+
+.btn-login,
+.btn-cadastro {
+  background: var(--verde-principal);
+  color: #ffffff !important;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-block; /* Garante alinhamento correto */
+}
+
+/* Efeito hover para ambos */
+.btn-login:hover,
+.btn-cadastro:hover {
+  background: var(--verde-escuro);
+  transform: translateY(-2px);
+}
+
+/* Opcional: Destaque diferente para cadastro */
+.btn-cadastro {
+  background: #ffffff;
+  color: var(--verde-principal) !important;
+  border: 2px solid var(--verde-principal);
+}
+
+.btn-cadastro:hover {
+  background: var(--verde-principal);
+  color: #ffffff !important;
+}
+
+.menu-mobile {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 4rem 5%;
+  background: linear-gradient(135deg, #7ca481, var(--branco));
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: var(--verde-escuro);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.search-box {
+  display: flex;
+  max-width: 600px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+}
+
+.search-box button {
+  background: var(--verde-principal);
+  color: var(--branco);
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-box button:hover {
+  background: var(--verde-escuro);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* COMO FUNCIONA */
+.como-funciona {
+  padding: 4rem 5%;
+  text-align: center;
+  background: var(--branco);
+}
+
+.como-funciona h2 {
+  font-size: 2rem;
+  color: var(--verde-escuro);
+  margin-bottom: 3rem;
+}
+
+.passos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.passo {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 2rem;
+  background: var(--cinza-claro);
+  border-radius: 10px;
+  position: relative;
+}
+
+.numero {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--verde-principal);
+  color: var(--branco);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.passo i {
+  font-size: 2.5rem;
+  color: var(--verde-principal);
+  margin-bottom: 1rem;
+}
+
+.passo h3 {
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+
+/* DESTAQUES */
+.destaques {
+  padding: 4rem 5%;
+  background: var(--cinza-claro);
+}
+
+.destaques h2 {
+  font-size: 2rem;
+  color: var(--verde-escuro);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.professores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.professor-card {
+  background: var(--branco);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.professor-card:hover {
+  transform: translateY(-10px);
+}
+
+.professor-header {
+  position: relative;
+}
+
+.professor-header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.avaliacao {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.7);
+  color: var(--branco);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.professor-info {
+  padding: 1.5rem;
+}
+
+.professor-info h3 {
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.professor-info p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.professor-info i {
+  color: var(--verde-principal);
+  margin-right: 0.5rem;
+}
+
+.preco {
+  font-weight: bold;
+  color: var(--verde-escuro);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.btn-ver-mais {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  background: var(--verde-principal);
+  color: var(--branco);
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-ver-mais:hover {
+  background: var(--verde-escuro);
+}
+
+/* FOOTER */
+footer {
+  background: #effff1;
+  color:var(--verde-escuro) ;
+  padding: 3rem 5% 1rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 2px;
+  background: darkgreen;
+}
+
+.footer-section a {
+  display: block;
+  color: var(--verde-escuro);
+  margin-bottom: 0.8rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #b2dfdb;
+}
+
+.footer-section i {
+  margin-right: 0.8rem;
+  width: 20px;
+  text-align: center;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+/* ESTILOS DE AGENDAMENTO */
+.agendamento-container {
+  background-color: var(--branco);
+  padding: 2rem 0;
+}
+
+.agendamento-header {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.agendamento-header h1 {
+  color: var(--verde-escuro);
+  text-align: center;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.nome-professor {
+  color: var(--verde-principal);
+}
+
+.btn-voltar {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--verde-principal);
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.agendamento-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.professor-info-card {
+  flex: 1;
+  max-width: 300px;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+}
+
+.professor-mini-card {
+  background: var(--branco);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e0e0e0;
+}
+
+.professor-mini-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--cinza-claro);
+}
+
+.professor-mini-info h3 {
+  color: var(--verde-escuro);
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+.avaliacao-mini {
+  color: #ff9500;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.preco-aula {
+  color: var(--verde-principal);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.info-aula {
+  background: var(--cinza-claro);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+}
+
+.info-aula h4 {
+  color: var(--verde-escuro);
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-aula ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.info-aula li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.info-aula i {
+  color: var(--verde-principal);
+  width: 20px;
+  text-align: center;
+}
+
+.form-agendamento {
+  flex: 2;
+  background: var(--branco);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: var(--sombra);
+  border: 1px solid #e0e0e0;
+}
+
+.form-agendamento h2 {
+  color: var(--verde-escuro);
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.etapa {
+  display: none;
+}
+
+.etapa-ativa {
+  display: block;
+}
+
+.calendario-container {
+  margin-bottom: 2rem;
+}
+
+.mes-navegacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.mes-navegacao h3 {
+  color: var(--verde-escuro);
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.btn-mes {
+  background: none;
+  border: none;
+  color: var(--verde-principal);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn-mes:hover {
+  background: var(--cinza-claro);
+}
+
+.dias-semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: 600;
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+
+.dias-mes {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.dia-calendario, .dia-vazio {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.dia-calendario {
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.dia-disponivel {
+  background: var(--cinza-claro);
+  color: var(--verde-escuro);
+}
+
+.dia-disponivel:hover {
+  background: #e0e0e0;
+}
+
+.dia-indisponivel {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.dia-atual {
+  border: 2px solid var(--verde-principal);
+}
+
+.dia-selecionado {
+  background: var(--verde-principal);
+  color: var(--branco);
+}
+
+.horarios-disponiveis h4 {
+  color: var(--verde-escuro);
+  margin-bottom: 1rem;
+}
+
+.lista-horarios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.btn-horario {
+  background: var(--cinza-claro);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.btn-horario:hover {
+  background: #e0e0e0;
+}
+
+.horario-selecionado {
+  background: var(--verde-principal);
+  color: var(--branco);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--verde-escuro);
+}
+
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.navegacao-etapas {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.btn-voltar-etapa, 
+.btn-avancar, 
+.btn-confirmar {
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-voltar-etapa {
+  background: none;
+  border: 1px solid #ddd;
+  color: var(--cinza-texto);
+}
+
+.btn-voltar-etapa:not(:disabled):hover {
+  background: #f5f5f5;
+}
+
+.btn-voltar-etapa:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-avancar, 
+.btn-confirmar {
+  background: var(--verde-principal);
+  color: var(--branco);
+  border: none;
+}
+
+.btn-avancar:hover, 
+.btn-confirmar:hover {
+  background: var(--verde-escuro);
+  transform: translateY(-2px);
+}
+
+.btn-confirmar {
+  display: none;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: var(--branco);
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.close-modal {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.modal-icon {
+  font-size: 4rem;
+  color: var(--verde-principal);
+  margin: 1rem 0;
+}
+
+.modal h2 {
+  color: var(--verde-escuro);
+  margin-bottom: 1.5rem;
+}
+
+.resumo-agendamento {
+  background: var(--cinza-claro);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.resumo-agendamento p {
+  margin: 0.8rem 0;
+}
+
+.modal-botoes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+/* ESTILOS PARA OS NOVOS BOTÕES */
+.btn-chat {
+  background: #2196F3 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-chat:hover {
+  background: #0b7dda !important;
+}
+
+.btn-sala {
+  background: #4CAF50 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-sala:hover {
+  background: #3e8e41 !important;
+}
+
+.modal-botoes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.modal-botoes .btn-modal {
+  flex: 1;
+  min-width: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+  .agendamento-content {
+    flex-direction: column;
+  }
+  
+  .professor-info-card {
+    max-width: 100%;
+    position: static;
+  }
+}
+
+@media (max-width: 576px) {
+  .agendamento-header h1 {
+    font-size: 1.4rem;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .btn-voltar {
+    position: static;
+    margin-bottom: 1rem;
+    transform: none;
+  }
+  
+  .modal-botoes {
+    flex-direction: column;
+  }
+  
+  .navegacao-etapas {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .navegacao-etapas button {
+    flex: 100%;
+  }
+}
